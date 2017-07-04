@@ -43,7 +43,6 @@ Ext.onReady(function () {
         }
     ]);
 
-
     var masterProxy = new Ext.data.HttpProxy({
         api: {
             read: 'masters'
@@ -55,7 +54,6 @@ Ext.onReady(function () {
             read: 'pets'
         }
     });
-
 
     var masterReader = new Ext.data.JsonReader({
             totalProperty: 'total',

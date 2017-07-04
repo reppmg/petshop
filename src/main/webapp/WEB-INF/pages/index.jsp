@@ -3,11 +3,7 @@
 <head>
     <!-- ExtJS css -->
     <link rel="stylesheet" type="text/css" href="resources/ext-3.4.0/resources/css/ext-all.css"/>
-
-    <!-- Row Editor plugin css -->
-    <link rel="stylesheet" type="text/css" href="resources/ext-3.4.0/examples/ux/css/rowEditorCustom.css"/>
     <link rel="stylesheet" type="text/css" href="resources/ext-3.4.0/examples/shared/examples.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/ext-3.4.0/examples/ux/css/RowEditor.css"/>
 
     <!-- App custom css -->
     <link rel="stylesheet" type="text/css" href="resources/css/crudgrid.css"/>
@@ -16,9 +12,7 @@
     <script src="resources/ext-3.4.0/adapter/ext/ext-base.js"></script>
     <script src="resources/ext-3.4.0/ext-all.js"></script>
 
-    <!-- Row Editor plugin js -->
-    <script src="resources/ext-3.4.0/examples/ux/RowEditor.js"></script>
-
+    <!-- App custom js -->
     <script type="text/javascript" src="resources/js/pets-grid.js"></script>
 </head>
 <body>
