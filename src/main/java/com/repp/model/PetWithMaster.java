@@ -18,4 +18,6 @@ public class PetWithMaster {
     private String pet_name;
     private String  pet_type;
 
+    private Long id;
+
 }

@@ -16,4 +16,6 @@ public interface PetMapper {
     void insertPet(Pet pet);
 
     void updatePet(Pet pet, Long id);
+
+    void deletePetById(Long id);
 }

@@ -6,7 +6,7 @@
 
     <select id="getAllMasters" resultType="com.repp.model.Master">
         SELECT
-        master_name as "name", phone, mail
+        master_name as "name", phone, mail, master_id AS "id"
         FROM
         masters
     </select>
@@ -28,6 +28,10 @@
         UPDATE public.masters SET master_name = #{param1.name}, phone = #{param1.phone}, mail = #{param1.mail}
         WHERE master_id=#{param2}
     </update>
+
+    <delete id="deleteMasterById">
+        DELETE FROM public.masters WHERE master_id=#{param1}
+    </delete>
 
 
 </mapper>

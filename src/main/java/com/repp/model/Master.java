@@ -11,6 +11,6 @@ public class Master {
     private String name;
     private String phone;
     private String mail;
-
+    private Long id;
 
 }

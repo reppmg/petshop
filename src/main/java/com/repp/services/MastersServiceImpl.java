@@ -21,6 +21,11 @@ public class MastersServiceImpl implements MastersService {
     }
 
     @Override
+    public void deleteMasterById(Long id) {
+        masterMapper.deleteMasterById(id);
+    }
+
+    @Override
     public void updateMaster(Master master, Long id) {
         masterMapper.updateMaster(master, id);
     }

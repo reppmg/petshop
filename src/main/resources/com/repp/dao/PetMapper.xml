@@ -6,6 +6,7 @@
 
     <select id="getAllPets" resultType="com.repp.model.PetWithMaster">
         SELECT
+            pet_id AS "id",
             pet_name,
             pet_type,
             birthdate,
@@ -40,6 +41,11 @@
     <update id="updatePet"
             parameterType="com.repp.model.Pet">
         UPDATE public.pets SET pet_name = #{param1.name}, pet_type = #{param1.type}, master = #{param1.master}
-          WHERE pet_id = #{param2}
+          WHERE pet_id = #{param2};
     </update>
+
+    <delete id="deletePetById"
+            >
+        DELETE FROM public.pets WHERE pet_id=#{param1};
+    </delete>
 </mapper>

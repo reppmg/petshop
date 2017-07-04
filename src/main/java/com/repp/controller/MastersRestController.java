@@ -56,6 +56,12 @@ public class MastersRestController {
         return true;
     }
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public boolean deleteMaster(@PathVariable Long id){
+        mastersService.deleteMasterById(id);
+        return true;
+    }
+
     private Map<String, Object> beautifyData(Object data, int size) {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("total", size);

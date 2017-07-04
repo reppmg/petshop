@@ -16,4 +16,6 @@ public interface MasterMapper {
     void insertMaster(Master master);
 
     void updateMaster(Master master, Long id);
+
+    void deleteMasterById(Long id);
 }

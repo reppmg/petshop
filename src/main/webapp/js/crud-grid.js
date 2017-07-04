@@ -111,6 +111,17 @@ Ext.onReady(function () {
     var grid = new Ext.grid.GridPanel({
         store: masterStore,
         columns: [
+
+            {
+                header: "id",
+                width: 70,
+                sortable: true,
+                dataIndex: 'id',
+                editor: {
+                    xtype: 'textfield',
+                    allowBlank: false
+                }
+            },
             {
                 header: "NAME",
                 width: 170,
@@ -153,6 +164,16 @@ Ext.onReady(function () {
     var petGrid = new Ext.grid.GridPanel({
         store: petStore,
         columns: [
+            {
+                header: "id",
+                width: 20,
+                sortable: true,
+                dataIndex: 'id',
+                editor: {
+                    xtype: 'textfield',
+                    allowBlank: false
+                }
+            },
             {
                 header: "NAME",
                 width: 70,
