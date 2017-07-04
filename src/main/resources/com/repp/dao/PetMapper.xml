@@ -4,7 +4,7 @@
 
 <mapper namespace="com.repp.dao.PetMapper">
 
-    <select id="getAllPets" resultType="com.repp.model.PetWithMaster">
+    <select id="getAllPetWithMasters" resultType="com.repp.model.PetWithMaster">
         SELECT
             pet_id AS "id",
             pet_name,
@@ -29,7 +29,7 @@
             mail
         FROM pets
             INNER JOIN masters ON pets.master = masters.master_id
-        WHERE pet_id = #{param1};
+        WHERE pet_id = #{id};
     </select>
 
     <insert id="insertPet"
@@ -40,12 +40,12 @@
 
     <update id="updatePet"
             parameterType="com.repp.model.Pet">
-        UPDATE public.pets SET pet_name = #{param1.name}, pet_type = #{param1.type}, master = #{param1.master}
-          WHERE pet_id = #{param2};
+        UPDATE public.pets SET pet_name = #{pet.name}, pet_type = #{pet.type}, master = #{pet.master}
+          WHERE pet_id = #{id};
     </update>
 
     <delete id="deletePetById"
             >
-        DELETE FROM public.pets WHERE pet_id=#{param1};
+        DELETE FROM public.pets WHERE pet_id=#{id};
     </delete>
 </mapper>

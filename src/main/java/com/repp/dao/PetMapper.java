@@ -9,7 +9,7 @@ import java.util.List;
  * Created by 1 on 02.07.2017.
  */
 public interface PetMapper {
-    List<PetWithMaster> getAllPets();
+    List<PetWithMaster> getAllPetWithMasters();
 
     Pet getPetById(Long id);
 

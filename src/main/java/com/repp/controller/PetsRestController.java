@@ -24,14 +24,14 @@ public class PetsRestController {
 
     @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody
-    Object getPets() {
-        List<PetWithMaster> allPets = petsService.getAllPets();
+    Map<String, Object> getPetWithMasters() {
+        List<PetWithMaster> allPets = petsService.getAllPetWithMasters();
         return convertToDto(allPets, allPets.size());
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public @ResponseBody
-    Object getPetById(@PathVariable Long id) {
+    Map<String, Object> getPetById(@PathVariable Long id) {
         return convertToDto(petsService.getPetById(id), 1);
     }
 

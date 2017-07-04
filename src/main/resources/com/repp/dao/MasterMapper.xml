@@ -16,7 +16,7 @@
         SELECT
         master_name as "name", phone, mail
         FROM masters
-        WHERE masters.master_id=#{param1}
+        WHERE masters.master_id=#{id}
     </select>
 
     <insert id="insertMaster" parameterType="com.repp.model.Master">
@@ -25,12 +25,12 @@
     </insert>
 
     <update id="updateMaser" parameterType="com.repp.model.Master">
-        UPDATE public.masters SET master_name = #{param1.name}, phone = #{param1.phone}, mail = #{param1.mail}
-        WHERE master_id=#{param2}
+        UPDATE public.masters SET master_name = #{master.name}, phone = #{master.phone}, mail = #{master.mail}
+        WHERE master_id=#{id}
     </update>
 
     <delete id="deleteMasterById">
-        DELETE FROM public.masters WHERE master_id=#{param1}
+        DELETE FROM public.masters WHERE master_id=#{id}
     </delete>
 
 

@@ -23,7 +23,7 @@ public class MastersRestController {
 
     @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody
-    Object getMasters() {
+    Map<String, Object> getMasters() {
         final List<Master> allMasters = mastersService.getAllMasters();
         return convertToDto(allMasters, allMasters.size());
     }
@@ -31,7 +31,7 @@ public class MastersRestController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public @ResponseBody
-    Object getMasterById(@PathVariable Long id) {
+    Map<String, Object> getMasterById(@PathVariable Long id) {
         return convertToDto(mastersService.getMasterById(id), 1);
     }
 

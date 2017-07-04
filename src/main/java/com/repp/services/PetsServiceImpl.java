@@ -17,8 +17,8 @@ public class PetsServiceImpl implements PetsService {
     @Autowired
     PetMapper petMapper;
 
-    public List<PetWithMaster> getAllPets() {
-        return petMapper.getAllPets();
+    public List<PetWithMaster> getAllPetWithMasters() {
+        return petMapper.getAllPetWithMasters();
     }
 
     @Override
