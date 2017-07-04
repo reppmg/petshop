@@ -1,0 +1,2 @@
+INSERT INTO public.masters (master_id, master_name, phone, mail) VALUES (1, 'Parker Wilson', '+12345678912', 'p.wilson@mail.com');
+INSERT INTO public.pets (pet_id, birthdate, pet_type, pet_name, master) VALUES (1, '1923-11-10', 'dog', 'Hachiko', 1);

@@ -2,22 +2,22 @@
 <html>
 <head>
     <!-- ExtJS css -->
-    <link rel="stylesheet" type="text/css" href="resources/ext-3.1.1/resources/css/ext-all.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/ext-3.4.0/resources/css/ext-all.css"/>
 
     <!-- Row Editor plugin css -->
-    <link rel="stylesheet" type="text/css" href="resources/ext-3.1.1/examples/ux/css/rowEditorCustom.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/ext-3.1.1/examples/shared/examples.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/ext-3.1.1/examples/ux/css/RowEditor.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/ext-3.4.0/examples/ux/css/rowEditorCustom.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/ext-3.4.0/examples/shared/examples.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/ext-3.4.0/examples/ux/css/RowEditor.css"/>
 
     <!-- App custom css -->
     <link rel="stylesheet" type="text/css" href="resources/css/crudgrid.css"/>
 
     <!-- ExtJS js -->
-    <script src="resources/ext-3.1.1/adapter/ext/ext-base.js"></script>
-    <script src="resources/ext-3.1.1/ext-all.js"></script>
+    <script src="resources/ext-3.4.0/adapter/ext/ext-base.js"></script>
+    <script src="resources/ext-3.4.0/ext-all.js"></script>
 
     <!-- Row Editor plugin js -->
-    <script src="resources/ext-3.1.1/examples/ux/RowEditor.js"></script>
+    <script src="resources/ext-3.4.0/examples/ux/RowEditor.js"></script>
 
     <!-- Excel DataGrid drag and drop plugin js -->
     <script src="resources/js/datadrop-plugin/Override.js"></script>
