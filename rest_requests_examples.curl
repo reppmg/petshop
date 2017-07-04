@@ -1,0 +1,34 @@
+Create master:
+curl --request POST \
+  --url http://localhost:8080/masters \
+  --header 'content-type: application/json' \
+  --data '{"name":"Richard Mozes", "mail":"r.mozes@mail.au", "phone":"+617657895463"}'
+
+Create pet:
+curl --request POST \
+  --url http://localhost:8080/pets \
+  --header 'content-type: application/json' \
+  --data '{"name":"Rex", "type":"dog", "birthdate":"0", "master":"1"}'
+
+Delete Master:
+curl --request DELETE \
+  --url http://localhost:8080/masters/1 \
+  --header 'content-type: application/json' \
+
+Update pet:
+curl --request PUT \
+  --url http://localhost:8080/pets/2 \
+  --header 'content-type: application/json' \
+  --data '{"name":"Rex", "type":"dog", "master":"4"}'
+
+Delete pet:
+curl --request DELETE \
+  --url http://localhost:8080/pets/1 \
+  --header 'content-type: application/json' \
+
+Update master
+curl --request PUT \
+  --url http://localhost:8080/masters/1 \
+  --header 'content-type: application/json' \
+  --data '{"name":"Richard Mozes", "mail":"r.mozes@mail.au", "phone":"+617657895463"}'
+
