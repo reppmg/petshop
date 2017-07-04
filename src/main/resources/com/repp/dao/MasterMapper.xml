@@ -11,5 +11,18 @@
         masters
     </select>
 
+    <select id="getMasterById"
+            resultType="com.repp.model.Master">
+        SELECT
+        master_name as "name", phone, mail
+        FROM masters
+        WHERE masters.master_id=#{param1}
+    </select>
+
+    <insert id="insertMaster" parameterType="com.repp.model.Master">
+        INSERT INTO public.masters (master_name, phone, mail)
+        VALUES (#{name}, #{phone}, #{mail})
+    </insert>
+
 
 </mapper>

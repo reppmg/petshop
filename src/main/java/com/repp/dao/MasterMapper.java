@@ -10,4 +10,8 @@ import java.util.List;
 public interface MasterMapper {
 
     List<Master> getAllMasters();
+
+    Master getMasterById(Long id);
+
+    void insertMaster(Master master);
 }

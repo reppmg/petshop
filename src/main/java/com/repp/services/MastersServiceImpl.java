@@ -19,4 +19,13 @@ public class MastersServiceImpl implements MastersService {
     public List<Master> getAllMasters() {
         return masterMapper.getAllMasters();
     }
+
+    @Override
+    public void insertMaster(Master master) {
+        masterMapper.insertMaster(master);
+    }
+
+    public Master getMasterById(Long id) {
+        return masterMapper.getMasterById(id);
+    }
 }

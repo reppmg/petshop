@@ -4,12 +4,42 @@
 
 <mapper namespace="com.repp.dao.PetMapper">
 
-    <select id="getAllPets" resultType="com.repp.model.Pet">
+    <select id="getAllPets" resultType="com.repp.model.PetWithMaster">
         SELECT
-        pet_name as "name", pet_type as "type", birthdate
+            pet_name,
+            pet_type,
+            birthdate,
+            master_name,
+            phone,
+            mail
         FROM
-        pets
+            pets
+        INNER JOIN masters on pets.master = masters.master_id
     </select>
 
+    <select id="getPetById"
+            resultType="com.repp.model.PetWithMaster">
+        SELECT
+            pet_name,
+            pet_type,
+            birthdate,
+            master_name,
+            phone,
+            mail
+        FROM pets
+            INNER JOIN masters ON pets.master = masters.master_id
+        WHERE pet_id = #{param1};
+    </select>
 
+    <insert id="insertPet"
+            parameterType="com.repp.model.Pet">
+        INSERT INTO public.pets (pet_name, pet_type, birthdate, master)
+                VALUES (#{name}, #{type}, #{birthdate}, #{master});
+    </insert>
+
+    <update id="updatePet"
+            parameterType="com.repp.model.Pet">
+        UPDATE public.pets SET pet_name = #{name}, pet_type = #{type}, master = #{master}
+          WHERE pet_id = #{param2}
+    </update>
 </mapper>

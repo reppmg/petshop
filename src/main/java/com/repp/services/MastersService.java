@@ -11,4 +11,8 @@ import java.util.List;
 @Service
 public interface MastersService {
     List<Master> getAllMasters();
+
+    Master getMasterById(Long id);
+
+    void insertMaster(Master master);
 }
