@@ -5,3 +5,7 @@
 данные в data.sql.
 
 Примеры REST-запросов для CRUD-запросов к таблице можно найти в файле rest_requests_examples.curl
+Версии технологий:
+- Spring:3.2.13.RELEASE
+- Ext JS: 3.4.0
+- MyBatis: 3.2.3
