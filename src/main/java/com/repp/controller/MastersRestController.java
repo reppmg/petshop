@@ -20,6 +20,11 @@ public class MastersRestController {
     @Autowired
     MastersService mastersService;
 
+
+    /**
+     *
+     * @return
+     */
     @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody
     Object getMasters() {
