@@ -39,7 +39,7 @@
 
     <update id="updatePet"
             parameterType="com.repp.model.Pet">
-        UPDATE public.pets SET pet_name = #{name}, pet_type = #{type}, master = #{master}
+        UPDATE public.pets SET pet_name = #{param1.name}, pet_type = #{param1.type}, master = #{param1.master}
           WHERE pet_id = #{param2}
     </update>
 </mapper>

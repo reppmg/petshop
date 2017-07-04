@@ -14,4 +14,6 @@ public interface MasterMapper {
     Master getMasterById(Long id);
 
     void insertMaster(Master master);
+
+    void updateMaster(Master master, Long id);
 }

@@ -12,4 +12,5 @@ public class Master {
     private String phone;
     private String mail;
 
+
 }

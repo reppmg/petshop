@@ -24,5 +24,10 @@
         VALUES (#{name}, #{phone}, #{mail})
     </insert>
 
+    <update id="updateMaser" parameterType="com.repp.model.Master">
+        UPDATE public.masters SET master_name = #{param1.name}, phone = #{param1.phone}, mail = #{param1.mail}
+        WHERE master_id=#{param2}
+    </update>
+
 
 </mapper>
