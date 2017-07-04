@@ -1,7 +1,6 @@
 Ext.onReady(function () {
 
-    Ext.BLANK_IMAGE_URL = '/resources/ext-3.1.1/resources/images/default/s.gif';
-
+    //Record, mapped from Master model in java
     var Master = Ext.data.Record.create([
         {name: 'id'},
         {
@@ -15,6 +14,7 @@ Ext.onReady(function () {
             type: 'string'
         }]);
 
+    //Record, mapped from PetWithMaster model in java
     var Pet = Ext.data.Record.create([
         {name: 'id'},
         {
@@ -43,6 +43,7 @@ Ext.onReady(function () {
         }
     ]);
 
+
     var masterProxy = new Ext.data.HttpProxy({
         api: {
             read: 'masters'
@@ -60,8 +61,7 @@ Ext.onReady(function () {
             totalProperty: 'total',
             successProperty: 'success',
             idProperty: 'id',
-            root: 'data',
-            messageProperty: 'message'  // <-- New "messageProperty" meta-data
+            root: 'data'
         },
         Master);
 
@@ -69,12 +69,11 @@ Ext.onReady(function () {
             totalProperty: 'total',
             successProperty: 'success',
             idProperty: 'id',
-            root: 'data',
-            messageProperty: 'message'  // <-- New "messageProperty" meta-data
+            root: 'data'
         },
         Pet);
 
-    // Typical Store collecting the Proxy, Reader and Writer together.
+    // Typical Store collecting the Proxy and Reader  together.
     var masterStore = new Ext.data.Store({
         id: 'master',
         proxy: masterProxy,
@@ -111,7 +110,6 @@ Ext.onReady(function () {
     var grid = new Ext.grid.GridPanel({
         store: masterStore,
         columns: [
-
             {
                 header: "id",
                 width: 70,
@@ -159,8 +157,6 @@ Ext.onReady(function () {
         frame: true
     });
 
-
-    // create grid
     var petGrid = new Ext.grid.GridPanel({
         store: petStore,
         columns: [

@@ -32,7 +32,7 @@ public class PetsRestController {
     public @ResponseBody Object getPetById(@PathVariable Long id) { return beautifyData(petsService.getPetById(id), 1);}
 
     @RequestMapping(method = RequestMethod.POST)
-    public boolean insertPet(@RequestBody Map<String , String > params){
+    public @ResponseBody boolean insertPet(@RequestBody Map<String , String > params){
         Pet pet = new Pet();
         pet.setBirthdate(new Date(Long.valueOf(params.get("birthdate"))));
         pet.setMaster(Long.valueOf(params.get("master")));
@@ -44,7 +44,7 @@ public class PetsRestController {
 
     @RequestMapping(value = "/{id}",
             method = RequestMethod.PUT)
-    public boolean updatePet(@RequestBody Map<String , String > params, @PathVariable Long id){
+    public @ResponseBody boolean updatePet(@RequestBody Map<String , String > params, @PathVariable Long id){
         Pet pet = new Pet();
         pet.setMaster(Long.valueOf(params.get("master")));
         pet.setName(params.get("name"));
@@ -54,7 +54,7 @@ public class PetsRestController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public boolean deleteMaster(@PathVariable Long id){
+    public @ResponseBody boolean deleteMaster(@PathVariable Long id){
         petsService.deletePetById(id);
         return true;
     }

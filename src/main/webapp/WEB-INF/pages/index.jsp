@@ -26,10 +26,9 @@
     <script type="text/javascript" src="resources/js/crud-grid.js"></script>
 </head>
 <body>
-<h2>OLOLO JSP</h2>
+<h2>Pet Expo DB</h2>
 
-<a href="master">master</a>
-<a href="pet">pet</a>
+<p>База для выставки животных содержит две таблицы: питомцев и их владельцев.</p>
 <div id="crud-grid"></div>
 <div id="pet-grid"></div>
 </body>

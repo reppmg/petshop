@@ -23,7 +23,7 @@ public class MastersRestController {
     @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody
     Object getMasters() {
-        List<Master> allMasters = mastersService.getAllMasters();
+        final List<Master> allMasters = mastersService.getAllMasters();
         return beautifyData(allMasters, allMasters.size());
     }
 
@@ -36,8 +36,8 @@ public class MastersRestController {
 
 
     @RequestMapping(method = RequestMethod.POST)
-    public boolean insertMaster(@RequestBody Map<String , String > params){
-        Master master = new Master();
+    public @ResponseBody boolean insertMaster(@RequestBody Map<String , String > params){
+        final Master master = new Master();
         master.setMail(params.get("mail"));
         master.setName(params.get("name"));
         master.setPhone(params.get("phone"));
@@ -47,8 +47,8 @@ public class MastersRestController {
 
     @RequestMapping(value = "/{id}",
             method = RequestMethod.PUT)
-    public boolean updatePet(@RequestBody Map<String , String > params, @PathVariable Long id){
-        Master master = new Master();
+    public @ResponseBody boolean updatePet(@RequestBody Map<String , String > params, @PathVariable Long id){
+        final Master master = new Master();
         master.setMail(params.get("mail"));
         master.setName(params.get("name"));
         master.setPhone(params.get("phone"));
@@ -57,7 +57,7 @@ public class MastersRestController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public boolean deleteMaster(@PathVariable Long id){
+    public @ResponseBody boolean deleteMaster(@PathVariable Long id){
         mastersService.deleteMasterById(id);
         return true;
     }
@@ -67,7 +67,6 @@ public class MastersRestController {
         map.put("total", size);
         map.put("data", data);
         map.put("success", true);
-
         return map;
     }
 }
