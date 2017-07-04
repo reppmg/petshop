@@ -23,7 +23,7 @@
     <script src="resources/js/datadrop-plugin/Override.js"></script>
     <script src="resources/js/datadrop-plugin/Ext.ux.DataDrop.js"></script>
 
-    <script type="text/javascript" src="resources/js/crud-grid.js"></script>
+    <script type="text/javascript" src="resources/js/pets-grid.js"></script>
 </head>
 <body>
 <h2>Pet Expo DB</h2>

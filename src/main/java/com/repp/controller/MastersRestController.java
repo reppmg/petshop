@@ -21,22 +21,18 @@ public class MastersRestController {
     MastersService mastersService;
 
 
-    /**
-     *
-     * @return
-     */
     @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody
     Object getMasters() {
         final List<Master> allMasters = mastersService.getAllMasters();
-        return beautifyData(allMasters, allMasters.size());
+        return convertToDto(allMasters, allMasters.size());
     }
 
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public @ResponseBody
     Object getMasterById(@PathVariable Long id) {
-        return beautifyData(mastersService.getMasterById(id), 1);
+        return convertToDto(mastersService.getMasterById(id), 1);
     }
 
 
@@ -46,8 +42,7 @@ public class MastersRestController {
         master.setMail(params.get("mail"));
         master.setName(params.get("name"));
         master.setPhone(params.get("phone"));
-        mastersService.insertMaster(master);
-        return true;
+        return mastersService.insertMaster(master);
     }
 
     @RequestMapping(value = "/{id}",
@@ -57,17 +52,15 @@ public class MastersRestController {
         master.setMail(params.get("mail"));
         master.setName(params.get("name"));
         master.setPhone(params.get("phone"));
-        mastersService.updateMaster(master, id);
-        return true;
+        return mastersService.updateMaster(master, id);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public @ResponseBody boolean deleteMaster(@PathVariable Long id){
-        mastersService.deleteMasterById(id);
-        return true;
+        return mastersService.deleteMasterById(id);
     }
 
-    private Map<String, Object> beautifyData(Object data, int size) {
+    private Map<String, Object> convertToDto(Object data, int size) {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("total", size);
         map.put("data", data);

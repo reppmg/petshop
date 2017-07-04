@@ -13,9 +13,9 @@ public interface PetsService {
 
     Pet getPetById(Long id);
 
-    void insertPet(Pet pet);
+    boolean insertPet(Pet pet);
 
-    void updatePet(Pet pet, Long id);
+    boolean updatePet(Pet pet, Long id);
 
-    void deletePetById(Long id);
+    boolean deletePetById(Long id);
 }

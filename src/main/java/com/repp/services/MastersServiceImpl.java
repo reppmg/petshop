@@ -21,18 +21,19 @@ public class MastersServiceImpl implements MastersService {
     }
 
     @Override
-    public void deleteMasterById(Long id) {
-        masterMapper.deleteMasterById(id);
+    public boolean deleteMasterById(Long id) {
+
+        return masterMapper.deleteMasterById(id);
     }
 
     @Override
-    public void updateMaster(Master master, Long id) {
-        masterMapper.updateMaster(master, id);
+    public boolean updateMaster(Master master, Long id) {
+        return masterMapper.updateMaster(master, id);
     }
 
     @Override
-    public void insertMaster(Master master) {
-        masterMapper.insertMaster(master);
+    public boolean insertMaster(Master master) {
+        return masterMapper.insertMaster(master);
     }
 
     public Master getMasterById(Long id) {

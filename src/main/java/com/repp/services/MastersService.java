@@ -14,9 +14,9 @@ public interface MastersService {
 
     Master getMasterById(Long id);
 
-    void insertMaster(Master master);
+    boolean insertMaster(Master master);
 
-    void updateMaster(Master master, Long id);
+    boolean updateMaster(Master master, Long id);
 
-    void deleteMasterById(Long id);
+    boolean deleteMasterById(Long id);
 }

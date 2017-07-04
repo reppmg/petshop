@@ -15,7 +15,7 @@ Ext.onReady(function () {
         }]);
 
     //Record, mapped from PetWithMaster model in java
-    var Pet = Ext.data.Record.create([
+    var PetWithMaster = Ext.data.Record.create([
         {name: 'id'},
         {
             name: 'birthdate',
@@ -71,7 +71,7 @@ Ext.onReady(function () {
             idProperty: 'id',
             root: 'data'
         },
-        Pet);
+        PetWithMaster);
 
     // Typical Store collecting the Proxy and Reader  together.
     var masterStore = new Ext.data.Store({
@@ -100,12 +100,6 @@ Ext.onReady(function () {
         });
     });
 
-
-    var editor = new Ext.ux.grid.RowEditor({
-        saveText: 'Update'
-    });
-
-
     // create grid
     var grid = new Ext.grid.GridPanel({
         store: masterStore,
@@ -114,41 +108,25 @@ Ext.onReady(function () {
                 header: "id",
                 width: 70,
                 sortable: true,
-                dataIndex: 'id',
-                editor: {
-                    xtype: 'textfield',
-                    allowBlank: false
-                }
+                dataIndex: 'id'
             },
             {
                 header: "NAME",
                 width: 170,
                 sortable: true,
-                dataIndex: 'name',
-                editor: {
-                    xtype: 'textfield',
-                    allowBlank: false
-                }
+                dataIndex: 'name'
             },
             {
                 header: "PHONE #",
                 width: 150,
                 sortable: true,
-                dataIndex: 'phone',
-                editor: {
-                    xtype: 'textfield',
-                    allowBlank: false
-                }
+                dataIndex: 'phone'
             },
             {
                 header: "MAIL",
                 width: 150,
                 sortable: true,
-                dataIndex: 'mail',
-                editor: {
-                    xtype: 'textfield',
-                    allowBlank: false
-                }
+                dataIndex: 'mail'
             }
         ],
         title: 'Masters',
@@ -164,71 +142,43 @@ Ext.onReady(function () {
                 header: "id",
                 width: 20,
                 sortable: true,
-                dataIndex: 'id',
-                editor: {
-                    xtype: 'textfield',
-                    allowBlank: false
-                }
+                dataIndex: 'id'
             },
             {
                 header: "NAME",
                 width: 70,
                 sortable: true,
-                dataIndex: 'pet_name',
-                editor: {
-                    xtype: 'textfield',
-                    allowBlank: false
-                }
+                dataIndex: 'pet_name'
             },
             {
                 header: "TYPE",
                 width: 50,
                 sortable: true,
-                dataIndex: 'pet_type',
-                editor: {
-                    xtype: 'textfield',
-                    allowBlank: false
-                }
+                dataIndex: 'pet_type'
             },
             {
                 header: "BIRTHDATE",
                 width: 100,
                 sortable: true,
-                dataIndex: 'birthdate',
-                editor: {
-                    xtype: 'textfield',
-                    allowBlank: false
-                }
+                dataIndex: 'birthdate'
             },
             {
                 header: "MASTER",
                 width: 100,
                 sortable: true,
-                dataIndex: 'master_name',
-                editor: {
-                    xtype: 'textfield',
-                    allowBlank: false
-                }
+                dataIndex: 'master_name'
             },
             {
                 header: "Master's phone",
                 width: 100,
                 sortable: true,
-                dataIndex: 'phone',
-                editor: {
-                    xtype: 'textfield',
-                    allowBlank: false
-                }
+                dataIndex: 'phone'
             },
             {
                 header: "Master's mail",
                 width: 150,
                 sortable: true,
-                dataIndex: 'mail',
-                editor: {
-                    xtype: 'textfield',
-                    allowBlank: false
-                }
+                dataIndex: 'mail'
             }
         ],
         title: 'Pets',

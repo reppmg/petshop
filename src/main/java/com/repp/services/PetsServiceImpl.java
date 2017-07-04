@@ -22,17 +22,17 @@ public class PetsServiceImpl implements PetsService {
     }
 
     @Override
-    public void deletePetById(Long id) {
-        petMapper.deletePetById(id);
+    public boolean deletePetById(Long id) {
+        return petMapper.deletePetById(id);
     }
 
     @Override
-    public void updatePet(Pet pet, Long id) {
-        petMapper.updatePet(pet, id);
+    public boolean updatePet(Pet pet, Long id) {
+        return petMapper.updatePet(pet, id);
     }
 
-    public void insertPet(Pet pet) {
-        petMapper.insertPet(pet);
+    public boolean insertPet(Pet pet) {
+        return petMapper.insertPet(pet);
     }
 
     public Pet getPetById(Long id) {

@@ -23,43 +23,47 @@ public class PetsRestController {
     PetsService petsService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public @ResponseBody Object getPets(){
+    public @ResponseBody
+    Object getPets() {
         List<PetWithMaster> allPets = petsService.getAllPets();
-        return beautifyData(allPets, allPets.size());
+        return convertToDto(allPets, allPets.size());
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public @ResponseBody Object getPetById(@PathVariable Long id) { return beautifyData(petsService.getPetById(id), 1);}
+    public @ResponseBody
+    Object getPetById(@PathVariable Long id) {
+        return convertToDto(petsService.getPetById(id), 1);
+    }
 
     @RequestMapping(method = RequestMethod.POST)
-    public @ResponseBody boolean insertPet(@RequestBody Map<String , String > params){
+    public @ResponseBody
+    boolean insertPet(@RequestBody Map<String, String> params) {
         Pet pet = new Pet();
         pet.setBirthdate(new Date(Long.valueOf(params.get("birthdate"))));
         pet.setMaster(Long.valueOf(params.get("master")));
         pet.setName(params.get("name"));
         pet.setType(params.get("type"));
-        petsService.insertPet(pet);
-        return true;
+        return petsService.insertPet(pet);
     }
 
     @RequestMapping(value = "/{id}",
             method = RequestMethod.PUT)
-    public @ResponseBody boolean updatePet(@RequestBody Map<String , String > params, @PathVariable Long id){
+    public @ResponseBody
+    boolean updatePet(@RequestBody Map<String, String> params, @PathVariable Long id) {
         Pet pet = new Pet();
         pet.setMaster(Long.valueOf(params.get("master")));
         pet.setName(params.get("name"));
         pet.setType(params.get("type"));
-        petsService.updatePet(pet, id);
-        return true;
+        return petsService.updatePet(pet, id);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public @ResponseBody boolean deleteMaster(@PathVariable Long id){
-        petsService.deletePetById(id);
-        return true;
+    public @ResponseBody
+    boolean deleteMaster(@PathVariable Long id) {
+        return petsService.deletePetById(id);
     }
 
-    private Map<String, Object> beautifyData(Object data, int size){
+    private Map<String, Object> convertToDto(Object data, int size) {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("total", size);
         map.put("data", data);
