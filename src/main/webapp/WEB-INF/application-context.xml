@@ -20,14 +20,10 @@
     <context:component-scan base-package="com.repp"/>
     <context:annotation-config />
 
-    <!--<context:property-placeholder location="classpath*:application.properties"/>-->
-
     <bean
             class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 
-        <property name="location">
-            <value>application.properties</value>
-        </property>
+        <property name="location" value="application.properties"/>
     </bean>
 
     <bean id="dataSource"
@@ -37,10 +33,6 @@
         <property name="url" value="${spring.datasource.url}"/>
         <property name="username" value="${spring.datasource.username}"/>
         <property name="password" value="${spring.datasource.password}"/>
-    </bean>
-    <!-- transaction manager, use DataSourceTransactionManager" for JDBC local tx -->
-    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource" />
     </bean>
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -52,7 +44,7 @@
         <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>
 
-    <bean id="perMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+    <bean id="petMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
         <property name="mapperInterface" value="com.repp.dao.PetMapper"/>
         <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>

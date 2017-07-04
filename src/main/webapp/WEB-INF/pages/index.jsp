@@ -19,10 +19,6 @@
     <!-- Row Editor plugin js -->
     <script src="resources/ext-3.4.0/examples/ux/RowEditor.js"></script>
 
-    <!-- Excel DataGrid drag and drop plugin js -->
-    <script src="resources/js/datadrop-plugin/Override.js"></script>
-    <script src="resources/js/datadrop-plugin/Ext.ux.DataDrop.js"></script>
-
     <script type="text/javascript" src="resources/js/pets-grid.js"></script>
 </head>
 <body>
